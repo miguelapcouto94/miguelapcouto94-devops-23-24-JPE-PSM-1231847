@@ -36,10 +36,12 @@ public class Employee {
 
     private int jobYears;
 
+    private String email;
+
     private Employee() {
     }
 
-    public Employee(String firstName, String lastName, String description, int jobYears) {
+    public Employee(String firstName, String lastName, String description, int jobYears, String email) {
         if (firstName == null || firstName.isBlank()|| firstName.isEmpty()) {
             throw new IllegalArgumentException("First name cannot be null or empty");
         }
@@ -52,10 +54,14 @@ public class Employee {
         if (jobYears < 0) {
             throw new IllegalArgumentException("Job years cannot be negative");
         }
+        if (email == null || email.isBlank() || email.isEmpty()) {
+            throw new IllegalArgumentException("Invalid email address format");
+        }
         this.firstName = firstName;
         this.lastName = lastName;
         this.description = description;
         this.jobYears = jobYears;
+        this.email = email;
     }
 
     @Override
@@ -67,13 +73,14 @@ public class Employee {
                 Objects.equals(firstName, employee.firstName) &&
                 Objects.equals(lastName, employee.lastName) &&
                 Objects.equals(description, employee.description) &&
-                Objects.equals(jobYears, employee.jobYears);
+                Objects.equals(jobYears, employee.jobYears) &&
+                Objects.equals(email, employee.email);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(id, firstName, lastName, description, jobYears);
+        return Objects.hash(id, firstName, lastName, description, jobYears, email);
     }
 
     public Long getId() {
@@ -114,6 +121,13 @@ public class Employee {
 
     public void setJobYears(int jobYears) {
         this.jobYears = jobYears;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override
