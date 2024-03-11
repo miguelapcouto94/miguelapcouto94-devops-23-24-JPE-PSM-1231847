@@ -42,19 +42,19 @@ public class Employee {
     }
 
     public Employee(String firstName, String lastName, String description, int jobYears, String email) {
-        if (firstName == null || firstName.isBlank()|| firstName.isEmpty()) {
+        if (firstName == null || firstName.isBlank() || firstName.isEmpty()) {
             throw new IllegalArgumentException("First name cannot be null or empty");
         }
         if (lastName == null || firstName.isBlank() || lastName.isEmpty()) {
             throw new IllegalArgumentException("Last name cannot be null or empty");
         }
-        if (description == null || firstName.isBlank()|| description.isEmpty()) {
+        if (description == null || firstName.isBlank() || description.isEmpty()) {
             throw new IllegalArgumentException("Description cannot be null or empty");
         }
         if (jobYears < 0) {
             throw new IllegalArgumentException("Job years cannot be negative");
         }
-        if (email == null || email.isBlank() || email.isEmpty()) {
+        if (email == null || email.isBlank() || email.isEmpty() || !validEmail(email)) {
             throw new IllegalArgumentException("Invalid email address format");
         }
         this.firstName = firstName;
@@ -126,8 +126,13 @@ public class Employee {
     public String getEmail() {
         return email;
     }
+
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    private boolean validEmail(String email) {
+        return email.matches("^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$");
     }
 
     @Override
