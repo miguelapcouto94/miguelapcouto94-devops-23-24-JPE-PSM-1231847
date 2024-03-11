@@ -246,7 +246,7 @@ class EmployeeTest {
         employee.getEmail();
         //Assert
         assertEquals(expected, employee.getEmail());
-}
+    }
 
     @Test
     void setEmail() {
@@ -257,6 +257,52 @@ class EmployeeTest {
         employee.setEmail(expected);
         //Assert
         assertEquals(expected, employee.getEmail());
+    }
 
-    }}
+    @Test
+    void shouldNotCreateAValidEmployeeEmailIncorrect() {
+        String expected = "Invalid email address format";
+        //act
+        IllegalArgumentException result = Assertions.assertThrows(
+                IllegalArgumentException.class,
+                () -> new Employee("Miguel", "Couto", "human", 1, "miguelScouto.ipp.pt"));
+        //Assert:
+        assertEquals(expected, result.getMessage());
+    }
+
+    @Test
+    void ensureEmailIsInvalid_DoesNotHaveAtSign() {
+        //Arrange
+        String expected = "Invalid email address format";
+        // Act
+        IllegalArgumentException result = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                new Employee("Miguel", "Couto", "human", 1, "miguelisep.ipp.pt"));
+        // Assert
+        assertEquals(expected, result.getMessage());
+    }
+
+    @Test
+    void ensureEmailIsInvalid_DoesNotHaveFullStopSign() {
+        //Arrange
+        String expected = "Invalid email address format";
+        // Act
+        IllegalArgumentException result = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                new Employee("Miguel", "Couto", "human", 1, "miguelasas@isepipppt"));
+        // Assert
+        assertEquals(expected, result.getMessage());
+    }
+
+    @Test
+    void ensureEmailIsReturnedSuccessfully() {
+        // Arrange
+        Employee mcouto= new Employee("Miguel", "Couto", "human", 1, "miguelcouto@isep.ipp.pt");
+        ;
+        String expected = "miguelcouto@isep.ipp.pt";
+        // Act
+        String result = mcouto.getEmail();
+        // Assert
+        assertEquals(expected, result);
+    }
+
+}
 
