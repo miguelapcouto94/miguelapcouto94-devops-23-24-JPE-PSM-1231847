@@ -15,6 +15,7 @@
 3. [Second Part](#second-part)
     - [Implement a simple scenario illustrating a simple git workflow](#7-implement-a-simple-scenario-illustrating-a-simple-git-workflow)
     - [Create branches for fixing bugs](#8-create-branches-for-fixing-bugs)
+    - [Produce a Technical Report Document](#9-produce-a-technical-report-document)
 4. [Analysis of the alternative](#analysis-of-the-alternative)
 5. [Implementation of the alternative](#implementation-of-the-alternative)
 
@@ -272,7 +273,7 @@ Each step is accompanied by detailed instructions on what needs to be done, incl
 > git push
 ## Analysis of the alternative:
 
-## Comparison of Mercurial and Git:
+### Comparison of Mercurial and Git:
 Mercurial (Hg) is a distributed version control system (DVCS) that serves as an alternative to Git. It shares many similarities with Git but offers a different approach to version control. In this section, we will analyze how Mercurial compares to Git in terms of version control features and describe how Mercurial could be used to achieve the same goals as presented in this assignment.
 
 
@@ -288,12 +289,6 @@ Mercurial (Hg) is a distributed version control system (DVCS) that serves as an 
 | **Community**       | Mercurial has an active community, but it's generally smaller compared to Git. However, it still offers ample resources and support for users. | Git boasts a large and vibrant community with extensive resources, including documentation, tutorials, forums, and third-party tools, making it one of the most widely used version control systems. |
 
 Overall, both Mercurial and Git are powerful version control systems with their own strengths and weaknesses. The choice between them often depends on factors such as personal preference, team familiarity, project requirements, and specific use cases.
-
-
-
-
-
-
 
 
 ## Implementation of the alternative:
