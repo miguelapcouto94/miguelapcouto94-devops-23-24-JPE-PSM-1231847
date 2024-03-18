@@ -78,3 +78,12 @@ task backup(type: Copy){
     from 'src'
     into 'backup'
 }
+
+task archive(type: Zip){
+    group = "DevOps"
+    description = "Creates a zip file of the sources of the application"
+
+    from 'src'
+    archiveFileName = 'src.zip'
+    destinationDir(file('build'))
+}
