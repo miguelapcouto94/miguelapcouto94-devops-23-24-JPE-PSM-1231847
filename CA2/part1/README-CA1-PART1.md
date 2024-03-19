@@ -74,7 +74,9 @@ Create issue(s) in GitHub main task:
 
 * Interact with the client windows
   * To run several clients, you just need to open more terminals and repeat the invocation of the runClient gradle task
+ 
   ![Multiple Clients](https://i.ibb.co/h8pd3LR/Screenshot-from-2024-03-18-17-33-06.png)
+  
 * After testing, stop the server (Ctrl + C).
 
 
