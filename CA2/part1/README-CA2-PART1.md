@@ -2,8 +2,8 @@
 
 ##  Table of Contents
 
-1. [Introduction](#introduction)
-2. [Task List](#task-list)
+- [Introduction](#introduction)
+- [Task List](#task-list)
   - [1. GitHub Issue Creation](#1-github-issue-creation)
   - [2. Folder, Content Setup and Initial Commit](#2-folder-content-setup-and-initial-commit)
   - [3. Run Application](#3-run-application)
