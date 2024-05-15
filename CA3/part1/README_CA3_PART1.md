@@ -23,7 +23,6 @@ This report comprehensively elucidates the steps undertaken, challenges encounte
 throughout the process. Each phase is detailed meticulously, aiming to provide a comprehensive understanding of the
 entire procedure.
 
-
 ### Creating Issues in GitHub Main Task:
 
 * `#18 CA3_Part1: updated README.md`
@@ -33,14 +32,14 @@ entire procedure.
 * in the folder "Devops", create the folder CA3:
 
 ```bash
-mkdir CA3
+mkdir CA3/part1
 ```
 
 * Create a README.md in the folder CA3:
 
 ```bash
-cd CA3
-touch README.md
+cd part1
+touch README_CA3_PART1.md
 ```
 
 ## Setup and Configuration
@@ -53,7 +52,7 @@ execute the projects effectively.
 
 #### 1. **Download and Install VirtualBox
 
-**: Download and install VirtualBox from [Oracle's website](https://www.virtualbox.org/)
+- Download and install VirtualBox from [Oracle's website](https://www.virtualbox.org/)
 
 #### 2. **Setting Up a New VM**:
 
@@ -90,6 +89,7 @@ execute the projects effectively.
 #### 5. Initial VM Setup
 
 - This is how the `01-netcfg.yaml` should look like:
+
 ``` bash
     network:
         version: 2
@@ -101,7 +101,9 @@ execute the projects effectively.
                 addresses:
                     - 192.168.56.5/24
 ```
+
 - Apply the changes with:
+
 ```bash
 sudo netplan apply
  ```
@@ -226,10 +228,10 @@ and the "gradle_basic_demo" project from earlier assignments.
 
 ### Setting Up the Projects
 
-- Configure Maven Wrapper and Gradle Wrapper to give executing permissions:
+- Configure Maven Wrapper to give executing permissions:
+
 ```bash
 chmod +x mvnw
-chmod +x gradlew
 ```
 
 ### 1. For CA1: Spring boot tutorial basic project
@@ -260,45 +262,64 @@ ip addr
 ```
 
 - Open the web browser in:
-  `192.161.56.5:8080`
+  `192.168.56.5:8080`
 
 ### 2. For CA2-Part1: Practice with Gradle
 
 - Navigate to the Gradle project directory:
+
  ```bash
-cd CA2/part1/
+cd CA2/part1/gradle_basic_demo/
   ```
+
+- Configure Gradle Wrapper to give executing permissions:
+
+```bash
+chmod +x gradlew
+```
+
 - Build the project using Gradle and run the server:
+
 ``` bash
 ./gradlew build
 ./gradlew runServer
 ```
+
 - Build the project in your computer terminal and run the client:
+
 ``` bash
-./gradlew runClient --args="192.168.56.5 59001"
+./gradlew runClient --args="192.168.56.5:59001"
 ```
 
-
 ### 3. For CA2-Part2: Practice with Gradle
+
 - Navigate to the basic folder:
+
  ``` bash
-cd CA2/part2/
+cd CA2/part2/react-and-spring-data-rest-basic
+  ```
+
 ```
 - Run with gradle:
 ``` bash
 ./gradlew build
 ./gradlew bootRun
 ```
+
 - Check your VM's IP:
+
 ```bash
 ip addr
 ```
+
 - Write `http://192.168.56.5:8080/` The application should run smoothly.
 
 **Adding Tags to the Repository**:
 
-- Tagging the Final Submission: After completing your assignment, make sure to tag your repository to signify the version
-of the project submitted.
+- Tagging the Final Submission: After completing your assignment, make sure to tag your repository to signify the
+  version
+  of the project submitted.
+
 ``` bash
 git tag -a ca3-part1 -m "Complete CA3 Part 1"
 git push origin ca3-part1
@@ -306,11 +327,10 @@ git push origin ca3-part1
 
 ### Conclusion
 
-Once CA3 Part 1 is completed, we'll have successfully set up a virtual development environment using VirtualBox or UTM
-and transferred two important projects into it. This task not only helps us grasp virtualization technology better but
-also gives us practical skills in setting up and managing separate development environments. These abilities are crucial
-in professional settings where it's vital for development and testing environments to closely resemble production
-setups.
+In summary, upon completing CA3 Part 1, we will have effectively established a virtual development environment utilizing
+VirtualBox and migrated two significant projects into it. This endeavor not only enhances our understanding of
+virtualization technology but also equips us with practical proficiency in configuring and overseeing distinct
+development environments
 
 
 

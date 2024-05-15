@@ -54,7 +54,7 @@ This report outlines the process of converting the basic version of the Tutorial
   ```bash
   cd CA2
   cd Part1
-  touch README.md
+  touch README_CA3_PART1.md
   ```
 * Document all your work in the README.md file.
 * Stage the changes:
