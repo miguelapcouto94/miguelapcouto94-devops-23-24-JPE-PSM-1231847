@@ -165,7 +165,7 @@ of the solution are created:
 
 ### Conclusion
 
-In this assignment, we demonstrated two approaches to containerizing a chat server application using Docker. Both
+In this assignment, I demonstrated two approaches to containerizing a chat server application using Docker. Both
 approaches were successfully implemented, allowing the chat server to run in a Docker container while clients connected
 from the host machine. This exercise provided hands-on experience with Dockerfile creation, image building, and
 container management, reinforcing the concepts and practices of containerization in a development workflow.

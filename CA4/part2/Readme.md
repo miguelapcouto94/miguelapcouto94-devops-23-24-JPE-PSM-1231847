@@ -4,17 +4,18 @@
 
 1. [Introduction](#introduction)
 2. [Docker Configuration](#docker-configuration)
-    - [Dockerfile for db Container](#dockerfile-for-db-container)
-    - [Dockerfile for web Container](#dockerfile-for-web-container)
+   - [Dockerfile for db Container](#dockerfile-for-db-container)
+   - [Dockerfile for web Container](#dockerfile-for-web-container)
 3. [Docker Compose Configuration](#docker-compose-configuration)
 4. [Steps to Build and Run the Docker Images](#steps-to-build-and-run-the-docker-images)
-    - [Building Docker Images](#building-docker-images)
-    - [Running Docker Containers](#running-docker-containers)
-    - [Accessing the Application](#accessing-the-application)
+   - [Building Docker Images](#building-docker-images)
+   - [Running Docker Containers](#running-docker-containers)
+   - [Accessing the Application](#accessing-the-application)
 5. [Publishing Docker Images to Docker Hub](#publishing-docker-images-to-docker-hub)
-6. [Tagging the Repository](#tagging-the-repository)
-7. [Alternative Solution - Heroku Deployment](#alternative-solution---heroku-deployment)
-8. [Conclusion](#conclusion)
+6. [Using Volumes for Database Backup](#using-volumes-for-database-backup)
+7. [Tagging the Repository](#tagging-the-repository)
+8. [Alternative Solution - Heroku Deployment](#alternative-solution---heroku-deployment)
+9. [Conclusion](#conclusion)
 
 ### Introduction
 
@@ -171,6 +172,28 @@ To publish the Docker images to Docker Hub, follow these steps:
   sudo docker push miguelcouto/ca4-part2:part2-web
   ```
 
+### Using Volumes for Database Backup
+
+To use a volume with the `db` container to get a copy of the database file, follow these steps:
+
+1. **Run a shell in the `db` container:**
+
+ ```bash
+sudo docker-compose exec db bash
+ ```
+
+2. **Copy the database file to the mounted volume:**
+
+ ```bash
+cp /usr/src/app/h2-1.4.200.jar /usr/src/data-backup/
+ ```
+
+3. **Exit the container shell:**
+
+ ```bash
+exit
+ ```
+
 ### Tagging the Repository
 
 To tag the repository with `ca4-part2`, execute:
@@ -209,6 +232,6 @@ Docker images.
 ### Conclusion
 
 This README details the steps to set up a containerized environment using Docker to run a Spring application. Using
-Docker Compose, we orchestrated `web` and `db` services, built and published images to Docker Hub, and documented the
-entire process. Additionally, we explored deploying the solution to Heroku for running containerized applications in the
-cloud. Follow these instructions to replicate the environment and ensure proper functionality.
+Docker Compose, I orchestrated `web` and `db` services, built and published images to Docker Hub, and documented the
+entire process. Additionally, I explored deploying the solution to Heroku for running containerized applications in the
+cloud.
