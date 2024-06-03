@@ -13,7 +13,8 @@
     - [Accessing the Application](#accessing-the-application)
 5. [Publishing Docker Images to Docker Hub](#publishing-docker-images-to-docker-hub)
 6. [Tagging the Repository](#tagging-the-repository)
-7. [Conclusion](#conclusion)
+7. [Alternative Solution - Heroku Deployment](#alternative-solution---heroku-deployment)
+8. [Conclusion](#conclusion)
 
 ### Introduction
 
@@ -51,7 +52,9 @@ CMD ["java", "-cp", "/opt/h2.jar", "org.h2.tools.Server", "-tcp", "-tcpAllowOthe
 #### Dockerfile for web Container
 
 The Dockerfile for the `web` container sets up the Tomcat server and deploys the Spring application. Save this
-Dockerfile in the `CA4/Part2/web` directory. The Spring application JAR is copied into the container, which runs on port 8080.
+Dockerfile in the `CA4/Part2/web` directory. The Spring application JAR is copied into the container, which runs on port
+
+8080.
 
 ```Dockerfile
 # Create a basic container with Java 17 and running Tomcat 10
@@ -94,31 +97,31 @@ for connecting to the H2 database.
 
 ```yaml
 services:
-   web:
-      build: web
-      ports:
-         - "8080:8080"
-      networks:
-         default:
-            ipv4_address: 192.168.56.10
-      depends_on:
-         - "db"
-   db:
-      build: db
-      ports:
-         - "8082:8082"
-         - "9092:9092"
-      volumes:
-         - ./data:/usr/src/data-backup
-      networks:
-         default:
-            ipv4_address: 192.168.56.11
+  web:
+    build: web
+    ports:
+      - "8080:8080"
+    networks:
+      default:
+        ipv4_address: 192.168.56.10
+    depends_on:
+      - "db"
+  db:
+    build: db
+    ports:
+      - "8082:8082"
+      - "9092:9092"
+    volumes:
+      - ./data:/usr/src/data-backup
+    networks:
+      default:
+        ipv4_address: 192.168.56.11
 networks:
-   default:
-      ipam:
-         driver: default
-         config:
-            - subnet: 192.168.56.0/24
+  default:
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.56.0/24
 ```
 
 ### Steps to Build and Run the Docker Images
@@ -141,7 +144,8 @@ sudo docker compose up
 
 #### Accessing the Application
 
-To access the Spring application, open a web browser and go to `http://localhost:8080/react-and-spring-data-rest-basic-0.0.1`. To access the H2 database
+To access the Spring application, open a web browser and go
+to `http://localhost:8080/react-and-spring-data-rest-basic-0.0.1`. To access the H2 database
 console, navigate to `http://localhost:8082` and connect to the `jpadb` database using the JDBC
 URL `jdbc:h2:tcp://192.168.56.11:9092/./jpadb`.
 
@@ -176,8 +180,35 @@ git tag ca4-part2
 git push origin ca4-part2
 ```
 
+### Alternative Solution - Heroku Deployment
+
+Heroku is a cloud platform that enables developers to build, run, and operate applications entirely in the cloud.
+Deploying Docker containers to Heroku involves creating a Heroku app, setting up Heroku container registry, and pushing
+Docker images.
+
+#### Steps to Deploy to Heroku:
+
+1. **Install Heroku CLI:** Follow instructions on the Heroku website to install the CLI tool.
+2. **Login to Heroku:** Use the command `heroku login` to authenticate.
+3. **Create a Heroku App:**
+
+ ```bash
+ heroku create <app-name>
+ ```
+
+4. **Push Docker Images to Heroku:**
+
+ ```bash
+ heroku container:login
+ heroku container:push web --app <app-name>
+ heroku container:release web --app <app-name>
+ ```
+
+5. **Access the Application:** Open the Heroku app URL to access your deployed application.
+
 ### Conclusion
 
 This README details the steps to set up a containerized environment using Docker to run a Spring application. Using
 Docker Compose, we orchestrated `web` and `db` services, built and published images to Docker Hub, and documented the
-entire process. Follow these instructions to replicate the environment and ensure proper functionality.
+entire process. Additionally, we explored deploying the solution to Heroku for running containerized applications in the
+cloud. Follow these instructions to replicate the environment and ensure proper functionality.

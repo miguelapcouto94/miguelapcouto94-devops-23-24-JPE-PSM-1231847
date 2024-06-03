@@ -86,7 +86,8 @@ of the solution are created:
    ```
    
    <img src="https://i.ibb.co/PFyv0kT/chatopenv1.png" alt="chatopenv1" ></a>
-<img src="https://i.ibb.co/4g5Nxmz/chat-server-runningv1.png" alt="chat-server-runningv1" ></a>
+
+   <img src="https://i.ibb.co/4g5Nxmz/chat-server-runningv1.png" alt="chat-server-runningv1" ></a>
    
    (Open two different terminals for two clients)
 9. The server is running in Docker and the clients are running on the host.
@@ -94,7 +95,7 @@ of the solution are created:
    ```bash
    docker push miguelcouto/chat-server:version1
    ```
-
+   <img src="https://i.ibb.co/K61Y12K/Screenshot-from-2024-06-02-17-54-54.png" alt="Screenshot-from-2024-06-02-17-54-54" border="0"></a>
 ---
 
 
@@ -148,12 +149,15 @@ of the solution are created:
    ./gradlew runClient
    ```
    <img src="https://i.ibb.co/D1qYsCW/chat-runv2.png" alt="chat-runv2" ></a>
+
    <img src="https://i.ibb.co/KNwjYkQ/chatopenv2.png" alt="chatopenv2" ></a>
 8. The server is running in Docker and the clients are running on the host.
 9. Push the image to Docker Hub:
    ```bash
    docker push miguelcouto/chat-server:version2
    ```
+   <img src="https://i.ibb.co/pKXH7dm/Screenshot-from-2024-06-02-17-50-41.png" alt="Screenshot-from-2024-06-02-17-50-41" ></a>
+
 
 ---
 
