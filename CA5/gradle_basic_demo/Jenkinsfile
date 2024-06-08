@@ -13,7 +13,7 @@ pipeline {
 
                 dir('CA2/Part1/gradle_basic_demo') {
 
-                    bat './gradlew assemble'
+                    sh './gradlew assemble'
                 }
             }
         }
@@ -22,7 +22,7 @@ pipeline {
 
                 dir('CA2/Part1/gradle_basic_demo') {
 
-                    bat './gradlew test'
+                    sh'./gradlew test'
                 }
             }
             post {
