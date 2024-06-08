@@ -13,6 +13,7 @@ pipeline {
 
                 dir('CA2/part1/gradle_basic_demo') {
                 echo 'Assembling...'
+                sh 'chmod +x gradlew'
                 sh './gradlew clean assemble'
                 }
             }
