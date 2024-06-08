@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-
+                echo 'Checking out from repository'
                 git url: 'https://github.com/miguelapcouto94/miguelapcouto94-devops-23-24-JPE-PSM-1231847', branch: 'main'
             }
         }
@@ -12,8 +12,9 @@ pipeline {
             steps {
 
                 dir('CA2/Part1/gradle_basic_demo') {
-
-                    sh './gradlew assemble'
+                echo 'Assembling...'
+                sh 'chmod +x gradlew'
+                sh './gradlew clean assemble'
                 }
             }
         }
@@ -21,8 +22,9 @@ pipeline {
             steps {
 
                 dir('CA2/Part1/gradle_basic_demo') {
-
-                    sh'./gradlew test'
+                echo 'Running Tests...'
+                    sh './gradlew test'
+                    junit 'build/test-results/test/*.xml'
                 }
             }
             post {
@@ -36,6 +38,7 @@ pipeline {
             steps {
 
                 dir('CA2/Part1/gradle_basic_demo') {
+                echo 'Archiving artifacts...'
 
                     archiveArtifacts artifacts: 'build/libs/*.jar', fingerprint: true
                 }
