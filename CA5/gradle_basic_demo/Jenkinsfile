@@ -1,0 +1,45 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+
+                git url: 'https://github.com/miguelapcouto94/miguelapcouto94-devops-23-24-JPE-PSM-1231847', branch: 'main'
+            }
+        }
+        stage('Assemble') {
+            steps {
+
+                dir('CA2/Part1/gradle_basic_demo') {
+
+                    bat './gradlew assemble'
+                }
+            }
+        }
+        stage('Test') {
+            steps {
+
+                dir('CA2/Part1/gradle_basic_demo') {
+
+                    bat './gradlew test'
+                }
+            }
+            post {
+                always {
+
+                    junit 'CA2/Part1/gradle_basic_demo/build/test-results/test/*.xml'
+                }
+            }
+        }
+        stage('Archive') {
+            steps {
+
+                dir('CA2/Part1/gradle_basic_demo') {
+
+                    archiveArtifacts artifacts: 'build/libs/*.jar', fingerprint: true
+                }
+            }
+        }
+    }
+}
