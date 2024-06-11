@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_CREDENTIALS_ID = 'docker-credentials'
-        DOCKER_IMAGE = "1101448/jenkins-image"
+        DOCKER_CREDENTIALS_ID = 'miguelcouto-dockerhub'
+        DOCKER_IMAGE = "miguelcouto/jenkins-image"
         DOCKER_REGISTRY = "https://index.docker.io/v1/"
         REPO_URL = 'https://github.com/miguelapcouto94/miguelapcouto94-devops-23-24-JPE-PSM-1231847'
     }
