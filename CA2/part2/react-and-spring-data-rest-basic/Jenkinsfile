@@ -10,7 +10,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo 'Checking out...'
-                git branch: 'main', credentialsId: 'miguelapcouto94-credentials', url: 'https://github.com/miguelapcouto94/miguelapcouto94-devops-23-24-JPE-PSM-1231847.git'
+                git branch: 'main', url: 'https://github.com/miguelapcouto94/miguelapcouto94-devops-23-24-JPE-PSM-1231847.git'
             }
         }
 
