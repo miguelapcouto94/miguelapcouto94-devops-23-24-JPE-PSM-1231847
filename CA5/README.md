@@ -125,10 +125,9 @@ pipeline {
 
 3. Run the pipeline and review the console output to ensure all stages execute successfully.
 
+<img src="https://i.ibb.co/0DrBCHr/Screenshot-from-2024-06-13-10-02-09.png" alt="Screenshot-from-2024-06-13-10-02-09" border="0"></a>
 
-<a href="https://ibb.co/98WwbQW"><img src="https://i.ibb.co/0DrBCHr/Screenshot-from-2024-06-13-10-02-09.png" alt="Screenshot-from-2024-06-13-10-02-09" border="0"></a>
-
-<a href="https://ibb.co/cYnwWcP"><img src="https://i.ibb.co/nPJBXsT/Screenshot-from-2024-06-13-10-01-41.png" alt="Screenshot-from-2024-06-13-10-01-41" border="0"></a>
+<img src="https://i.ibb.co/nPJBXsT/Screenshot-from-2024-06-13-10-01-41.png" alt="Screenshot-from-2024-06-13-10-01-41" border="0"></a>
 
 
 ## CI/CD Pipelines with Jenkins - Part 2
@@ -263,13 +262,13 @@ pipeline {
 
 6. Run the pipeline and validate the execution of all stages, checking the console output for each stage.
 
-<a href="https://ibb.co/RDpLnKn"><img src="https://i.ibb.co/S3XqTgT/Screenshot-from-2024-06-13-11-08-17.png" alt="Screenshot-from-2024-06-13-11-08-17" border="0"></a>
+<img src="https://i.ibb.co/S3XqTgT/Screenshot-from-2024-06-13-11-08-17.png" alt="Screenshot-from-2024-06-13-11-08-17" border="0"></a>
 
-<a href="https://ibb.co/QrhD99w"><img src="https://i.ibb.co/D5mr442/Screenshot-from-2024-06-13-11-07-53.png" alt="Screenshot-from-2024-06-13-11-07-53" border="0"></a>
+<img src="https://i.ibb.co/D5mr442/Screenshot-from-2024-06-13-11-07-53.png" alt="Screenshot-from-2024-06-13-11-07-53" border="0"></a>
 
 7. Verify that the Docker image is successfully pushed to Docker Hub.
 
-<a href="https://ibb.co/VxPy6bk"><img src="https://i.ibb.co/hct50rT/Screenshot-from-2024-06-13-11-25-28.png" alt="Screenshot-from-2024-06-13-11-25-28" border="0"></a>
+<img src="https://i.ibb.co/hct50rT/Screenshot-from-2024-06-13-11-25-28.png" alt="Screenshot-from-2024-06-13-11-25-28" border="0"></a>
 
 This completes the setup and execution of the CI/CD pipelines using Jenkins for both parts of the assignment.
 
