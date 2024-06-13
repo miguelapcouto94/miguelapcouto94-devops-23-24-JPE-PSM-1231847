@@ -443,4 +443,4 @@ gradle-app.setting
 # Java heap dump
 *.hprof
 !/Dockerfile
-!/CA2/part2/react-and-spring-data-rest-basic/dockerfile
+
